@@ -2,15 +2,20 @@ var fs = require ('fs');
 
 var through = require ('through');
 
+var consolation = require ('consolation');
+var console = new consolation ({title: 'oddity', use_symbols: false, use_time: false});
+
 var Oddity = function () {
   this.csv = require ('./lib/csv.js');
 };
 
 global.fromFile = Oddity.prototype.fromFile = function (path) {
+  console.info ('Reading file '+path);
   return fs.createReadStream (path, {encoding: 'utf8'})
 };
 
 global.toFile = Oddity.prototype.toFile = function (path) {
+  console.info ('Writing file '+path);
   return fs.createWriteStream (path, {encoding: 'utf8'})
 };
 
