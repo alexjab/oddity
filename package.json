@@ -1,10 +1,10 @@
 {
   "name": "oddity",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A streaming Open Data toolkit",
   "main": "index.js",
   "dependencies": {
-    "consolation": "~0.2.3",
+    "consolation": "~0.2.4",
     "through": "~2.3.4"
   },
   "author": "<alex@jablon.me>",
