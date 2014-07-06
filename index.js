@@ -17,17 +17,29 @@ global.toFile = Oddity.prototype.toFile = function (path) {
 global.toString = Oddity.prototype.toString = function () {
   var line = 0, buffer = null;
 
+  var indent = function (string) {
+    return string.split ('\n').reduce (function (memo, line, index, list) {
+      memo += '  '+line;
+      if (index !== list.length - 1) {
+        memo += '\n';
+      }
+      return memo;
+    }, '');
+  };
+
   var stringify = function (data) {
     if (line === 0) {
       buffer = data;
     } else {
       if (buffer) {
         buffer = JSON.stringify (buffer, null, 2);
-        this.queue ('[\n' + buffer.replace (/\{/, '  {').replace (/\n/g, '\n  '));
+        buffer = '[\n' + indent (buffer);
+        this.queue (buffer);
         buffer = '';
       }
       data = JSON.stringify (data, null, 2);
-      this.queue (',\n' + data.replace (/\{/, '  {').replace (/\n/g, '\n  '));
+      data = ',\n' + indent (data);
+      this.queue (data);
     }
     line++;
   };
@@ -120,5 +132,20 @@ global.mapData = exports.mapData = function (fn) {
   return through (map);
 };
 
-module.exports = new Oddity ();
+global.mapFields = exports.mapFields = function () {
+  line = 0;
+  var args = arguments;
+  var fn = args[args.length - 1];
 
+  var map = function (data) {
+    for (var i = 0; i < args.length-1; i++) {
+      var field = args[i];
+      data[field] = fn.call (null, data[field]);
+    }
+    this.queue (data);
+  };
+
+  return through (map);
+};
+
+module.exports = new Oddity ();
