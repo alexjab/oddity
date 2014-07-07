@@ -1,8 +1,8 @@
 {
   "name": "oddity",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A streaming Open Data toolkit",
-  "main": "index.js",
+  "main": "lib/index.js",
   "dependencies": {
     "consolation": "~0.2.4",
     "through": "~2.3.4"
@@ -10,7 +10,7 @@
   "author": " <alex@jablon.me>",
   "license": "MIT",
   "bin": {
-    "oddity": "application.js"
+    "oddity": "bin/application.js"
   },
   "directories": {
     "example": "examples"
