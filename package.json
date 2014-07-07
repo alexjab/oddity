@@ -7,6 +7,29 @@
     "consolation": "~0.2.4",
     "through": "~2.3.4"
   },
-  "author": "<alex@jablon.me>",
-  "license": "MIT"
+  "author": " <alex@jablon.me>",
+  "license": "MIT",
+  "bin": {
+    "oddity": "application.js"
+  },
+  "directories": {
+    "example": "examples"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexjab/oddity.git"
+  },
+  "keywords": [
+    "streams",
+    "open",
+    "data"
+  ],
+  "bugs": {
+    "url": "https://github.com/alexjab/oddity/issues"
+  },
+  "homepage": "https://github.com/alexjab/oddity"
 }
