@@ -1,0 +1,4 @@
+*.swp
+*.csv
+Oddfile.js
+node_modules/
