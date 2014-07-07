@@ -301,10 +301,6 @@ Example:
 
 Returns a set of transformations, from CSV to JSON. Use this if your CSV file is perfect. Each option is passed straight to the corresponding option in the transformations and defaults to their respective default value.
 
-#####Stream:
- - input: a stream of Arrays,
- - output: a stream of Arrays.
-
 #####Parameters:
 `.autoLoad(input, output, [options])`
 
@@ -322,4 +318,9 @@ Returns a set of transformations, from CSV to JSON. Use this if your CSV file is
 `autoLoad` is a wrapper around the following transformations:
 ```
  fromFile -> splitLines -> toArray -> zipHeader -> toString -> toFile
+```
+
+Example:
+```
+csv.autoLoad ('examples/colors.csv', 'output.json');
 ```
