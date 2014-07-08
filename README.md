@@ -274,8 +274,8 @@ Before rotation:
 After rotation:
 ---------------
 [
-  ['iso', 'BR', 'FI', 'FR','MA', 'ES', 'TW', ],
-  ['name', 'Brazil', 'Finland', 'France', 'Morocco', 'Spain', 'Taiwan']
+  ['iso', 'FI', 'FR','MA', 'ES'],
+  ['name', 'Finland', 'France', 'Morocco', 'Spain']
 ]
 
 /*
