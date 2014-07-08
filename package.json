@@ -1,6 +1,6 @@
 {
   "name": "oddity",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A streaming Open Data toolkit",
   "main": "lib/index.js",
   "dependencies": {
