@@ -15,9 +15,13 @@
   "directories": {
     "example": "examples"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "mocha": "~1.20.1",
+    "should": "~4.0.4",
+    "thebulk": "0.0.7"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha -R spec"
   },
   "repository": {
     "type": "git",
