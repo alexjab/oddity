@@ -116,25 +116,18 @@ global.pluckLine = exports.pluckLine = function (index) {
   return through (get);
 }
 
-global.mapData = exports.mapData = function (fn) {
+global.mapData = global.map = exports.map = exports.mapData = function (fn) {
   var line = 0;
 
-  var map = function (data) {
-    var sent = false;
-    data = fn.call (null, data, line, function (data) {
-      if (!sent) {
-        this.queue (data);
-        sent = true;
-      }
-    }.bind (this));
-    if (!sent && typeof data !== 'undefined') {
+  var map_data = function (data) {
+    data = fn.call (null, data, line);
+    if (typeof data !== 'undefined') {
       this.queue (data);
-      sent = true;
     }
     line ++;
   };
 
-  return through (map);
+  return through (map_data);
 };
 
 global.mapFields = exports.mapFields = function () {

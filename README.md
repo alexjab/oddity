@@ -125,7 +125,7 @@ Stringifies the data (which can be either a single object or several).
 (...).pipe(toString()).pipe(...)
 ```
 
-####.mapData
+####.map
 
 Applies a map function to the data. The function must `return` something.
 
@@ -134,19 +134,19 @@ Applies a map function to the data. The function must `return` something.
  - input: a stream of anything,
  - output: a stream of anything.
 
-`.mapData(data, index)`
+`.map(data, index)`
 
 #####Parameters:
 
  - `data`: the data,
  - `index`: the index of the data.
 
-#####Alias: `mapData`
+#####Alias: `map`
 
 #####Example:
 ```
 (...)
-.pipe(mapData(function (data, index) {
+.pipe(map(function (data, index) {
   data['age'] = parseInt(data['age']);
   return data;
 }))
